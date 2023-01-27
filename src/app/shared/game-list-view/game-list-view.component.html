@@ -1,0 +1,20 @@
+<p>
+  <i class="pi pi-calendar"></i>
+  {{ game.date | date : "EE dd. MMM yy hh:mm" }}
+</p>
+<p><i class="pi pi-ticket"></i> {{ game.tickets.length }}</p>
+<button
+  pbutton
+  pButton
+  class="p-button-sm"
+  label="View"
+  icon="pi pi-info-circle"
+  iconPos="right"
+></button>
+<button
+  pButton
+  label="Delete"
+  class="p-button-danger p-button-sm"
+  icon="pi pi-trash"
+  iconPos="right"
+></button>

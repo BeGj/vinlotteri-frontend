@@ -31,7 +31,7 @@ export class NavbarComponent {
   ];
   public navbarItems: Observable<NavbarItem[]>;
   constructor(protected authService: AuthService) {
-    this.navbarItems = authService.getUser().pipe(
+    this.navbarItems = authService.user.pipe(
       map((user) => {
         if (!user) {
           return [{

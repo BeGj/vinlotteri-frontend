@@ -1,1 +1,29 @@
-<p>frontoffice works!</p>
+<div
+  *ngIf="(authService.isLoggedIn | async) === true"
+  class="p-2 m-5 text-grey-300"
+>
+  <p>
+    Hey
+    <span class="text-lg font-semibold text-white">
+      {{ (authService.user | async)?.firstname }} </span
+    >.
+  </p>
+  <p *ngIf="this.balanceService.balance$ | async as balance">
+    Your current balance is
+    <span
+      class="text-xl font-semibold"
+      [ngClass]="{
+        'text-red-500': balance < 0,
+        'text-green-500': balance > +0
+      }"
+    >
+      {{ balance }}</span
+    >
+  </p>
+</div>
+<div class="p-1 m-5">
+  <h1 class="text-lg text-grey-300">Upcoming games</h1>
+  <ng-container *ngIf="this.gameService.upcomingGames | async as upcomingGames">
+    <app-game-list [games]="upcomingGames"></app-game-list>
+  </ng-container>
+</div>

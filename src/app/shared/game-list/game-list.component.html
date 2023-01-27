@@ -1,0 +1,11 @@
+<ng-container *ngIf="games.length > 0; else noGames">
+  <div
+    class="p-4 m-4 bg-gray-900 rounded-md shadow-md"
+    *ngFor="let game of games"
+  >
+    <app-game-list-view [game]="game"></app-game-list-view>
+  </div>
+</ng-container>
+<ng-template #noGames>
+  <p class="text-sm text-gray-400">No games found</p>
+</ng-template>

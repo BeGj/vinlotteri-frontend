@@ -1,33 +1,15 @@
-<p>backoffice works!</p>
-
-
-
-<app-create-game></app-create-game>
-
-
-
-
-<h1 class="text-lg">Upcoming games</h1>
-<ng-container *ngIf="this.gameService.upcomingGames | async as upcomingGames">
-  <div *ngIf="upcomingGames.length === 0">No upcoming games</div>
-  <div *ngFor="let game of upcomingGames" class="shadow-md rounded-md bg-gray-900 p-4 m-4">
-    <p><i class="pi pi-calendar"></i> {{game.date | date: 'EE dd. MMM yy hh:mm'}}</p>
-    <p><i class="pi pi-ticket"></i> {{game.tickets.length}}</p>
-    <button pbutton pButton class="p-button-sm" label="View" icon="pi pi-info-circle" iconPos="right"></button>
-    <button pButton label="Delete" class="p-button-danger p-button-sm" icon="pi pi-trash" iconPos="right"></button>
-  </div>
-
-</ng-container>
-
-
-<h1 class="text-lg">Previous games</h1>
-<ng-container *ngIf="this.gameService.previousGames | async as previousGames">
-  <div *ngIf="previousGames.length === 0">No upcoming games</div>
-  <div *ngFor="let game of previousGames" class="shadow-md rounded-md bg-gray-900 p-4 m-4">
-    <p><i class="pi pi-calendar"></i> {{game.date | date: 'EE dd. MMM yy hh:mm'}}</p>
-    <p><i class="pi pi-ticket"></i> {{game.tickets.length}}</p>
-    <button pbutton pButton class="p-button-sm" label="View" icon="pi pi-info-circle" iconPos="right"></button>
-    <button pButton label="Delete" class="p-button-danger p-button-sm" icon="pi pi-trash" iconPos="right"></button>
-  </div>
-
-</ng-container>
+<div class="p-1 m-5">
+  <app-create-game></app-create-game>
+</div>
+<div class="p-1 m-5">
+  <h1 class="text-lg">Upcoming games</h1>
+  <ng-container *ngIf="this.gameService.upcomingGames | async as upcomingGames">
+    <app-game-list [games]="upcomingGames"></app-game-list>
+  </ng-container>
+</div>
+<div class="p-1 m-5">
+  <h1 class="text-lg">Previous games</h1>
+  <ng-container *ngIf="this.gameService.previousGames | async as previousGames">
+    <app-game-list [games]="previousGames"></app-game-list>
+  </ng-container>
+</div>
