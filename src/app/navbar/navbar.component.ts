@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { map, Observable } from 'rxjs';
+import { BehaviorSubject, map, Observable } from 'rxjs';
 import { AuthService } from '../services/auth.service';
 import { RouterModule } from '@angular/router';
 
@@ -15,7 +15,8 @@ import { RouterModule } from '@angular/router';
   styleUrls: ['./navbar.component.scss']
 })
 export class NavbarComponent {
-
+  protected profileDropdownVisible = new BehaviorSubject<boolean>(false);
+  protected navMenuVisible = new BehaviorSubject<boolean>(false);
   private allNavbarItems: NavbarItem[] = [
     {
       text: 'Dashboard',
