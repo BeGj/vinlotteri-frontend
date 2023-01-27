@@ -14,10 +14,10 @@ export class AuthService {
   constructor() {
     this._user.next({
       balance: 0,
-      firstname: 'Peter',
+      firstname: 'Ola',
       id: 0,
-      lastname: 'Schjem',
-      username: 'schpet1',
+      lastname: 'Nordmann',
+      username: 'olanor1',
       isAdmin: true
     })
   }
