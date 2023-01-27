@@ -1,6 +1,6 @@
 # Vinlotteri frontend
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.0.4.
+<https://begj.github.io/vinlotteri-frontend/>
 
 ## Backoffice
 
@@ -17,6 +17,12 @@ Brukere kjøper lodd og ser egen saldo.
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+
+## Deploy to github pages
+
+Run `ng deploy --base-href=/vinlotteri-frontend/` to build prod and deploy automatically to github pages.
+
+Based on [this guide](https://www.syncfusion.com/blogs/post/easy-steps-to-host-an-angular-app-in-github-pages.aspx)
 
 ## Code scaffolding
 
