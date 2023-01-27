@@ -1,0 +1,8 @@
+<h1>Create new game</h1>
+<form [formGroup]="createGameForm">
+  <!-- <input type="date" formControlName="date"> -->
+  <p-calendar formControlName="date" dateFormat="D dd. M yy" [showTime]="true" hourFormat="24"></p-calendar>
+
+</form>
+<p-button [disabled]="createGameForm.invalid" label="Submit" icon="pi pi-check" iconPos="right"
+  (onClick)="createGameClicked()"></p-button>
