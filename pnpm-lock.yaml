@@ -1,7 +1,10 @@
 lockfileVersion: 5.4
 
 specifiers:
+  '@angular-devkit/architect': ^0.1501.3
   '@angular-devkit/build-angular': ^15.1.3
+  '@angular-devkit/core': ^15.1.3
+  '@angular-devkit/schematics': ^15.1.3
   '@angular/animations': ^15.1.2
   '@angular/cli': ~15.1.3
   '@angular/common': ^15.1.2
@@ -15,12 +18,16 @@ specifiers:
   '@types/jasmine': ~4.3.0
   angular-cli-ghpages: 1.0.5
   autoprefixer: ^10.4.13
+  chart.js: ^4.2.0
+  dayjs: ^1.11.7
   jasmine-core: ~4.5.0
   karma: ~6.4.0
   karma-chrome-launcher: ~3.1.0
   karma-coverage: ~2.2.0
   karma-jasmine: ~5.1.0
   karma-jasmine-html-reporter: ~2.0.0
+  keycloak-angular: ^13.0.0
+  keycloak-js: ^20.0.3
   postcss: ^8.4.21
   primeicons: ^6.0.1
   primeng: ^15.0.1
@@ -39,6 +46,10 @@ dependencies:
   '@angular/platform-browser': 15.1.2_d5cqipbc22ng45bbz7rblks63q
   '@angular/platform-browser-dynamic': 15.1.2_nvxdb5l45salvpcyi4ujzyiawy
   '@angular/router': 15.1.2_xr6kqtli5fp5phrzh2sb5lshpe
+  chart.js: 4.2.0
+  dayjs: 1.11.7
+  keycloak-angular: 13.0.0_dmva554ejayrayqwbjkfetxrlm
+  keycloak-js: 20.0.3
   primeicons: 6.0.1
   primeng: 15.0.1_hfnyxc3yi6a2iib5c73ikxarxe
   rxjs: 7.5.7
@@ -46,11 +57,14 @@ dependencies:
   zone.js: 0.12.0
 
 devDependencies:
+  '@angular-devkit/architect': 0.1501.3
   '@angular-devkit/build-angular': 15.1.3_wx46lerwrwhzryuw34vmh2rl5i
+  '@angular-devkit/core': 15.1.3
+  '@angular-devkit/schematics': 15.1.3
   '@angular/cli': 15.1.3
   '@angular/compiler-cli': 15.1.2_rk7n42cp6rlogm4wqoiclnd2sm
   '@types/jasmine': 4.3.1
-  angular-cli-ghpages: 1.0.5
+  angular-cli-ghpages: 1.0.5_btliek6xyjdpd5cxp4vf6zfnhm
   autoprefixer: 10.4.13_postcss@8.4.21
   jasmine-core: 4.5.0
   karma: 6.4.1
@@ -1897,6 +1911,10 @@ packages:
       '@jridgewell/sourcemap-codec': 1.4.14
     dev: true
 
+  /@kurkle/color/0.3.2:
+    resolution: {integrity: sha512-fuscdXJ9G1qb7W8VdHi+IwRqij3lBkosAm4ydQtEmbY58OzHXqQhvlxqEkoz0yssNVn38bcpRWgA9PP+OGoisw==}
+    dev: false
+
   /@leichtgewicht/ip-codec/2.0.4:
     resolution: {integrity: sha512-Hcv+nVC0kZnQ3tD9GVu5xSMR4VVYOteQIr/hwFPVEvPdlXqgGEuRjiheChHgdM+JyqdgNcmzZOX/tnl0JOiI7A==}
     dev: true
@@ -2412,7 +2430,7 @@ packages:
       uri-js: 4.4.1
     dev: true
 
-  /angular-cli-ghpages/1.0.5:
+  /angular-cli-ghpages/1.0.5_btliek6xyjdpd5cxp4vf6zfnhm:
     resolution: {integrity: sha512-utdXObMRFs3TqAsc4Km6/7pNnQoWTwgBbCDq2/8VgejId1Ft66Uh6TkA12EMpao7eH+WRRhv6VfWgui4oRucPQ==}
     hasBin: true
     peerDependencies:
@@ -2420,6 +2438,9 @@ packages:
       '@angular-devkit/core': ^9.0.0 || ^10.0.0 || ^11.0.0 || ^12.0.0 || ^13.0.0 || ^14.0.0 || ^15.0.0
       '@angular-devkit/schematics': ^9.0.0 || ^10.0.0 || ^11.0.0 || ^12.0.0 || ^13.0.0 || ^14.0.0 || ^15.0.0
     dependencies:
+      '@angular-devkit/architect': 0.1501.3
+      '@angular-devkit/core': 15.1.3
+      '@angular-devkit/schematics': 15.1.3
       commander: 3.0.2
       fs-extra: 9.1.0
       gh-pages: 3.2.3
@@ -2607,7 +2628,6 @@ packages:
 
   /base64-js/1.5.1:
     resolution: {integrity: sha512-AKpaYlHn8t4SVbOHCy+b5+KKgvR4vrsD8vbvrbiQJps7fKDTkjkDry6ji0rUJjC0kzbNePLwzxq8iypo41qeWA==}
-    dev: true
 
   /base64id/2.0.0:
     resolution: {integrity: sha512-lGe34o6EHj9y3Kts9R4ZYs/Gr+6N7MCaMlIFA3F1R2O5/m7K06AxfSeO5530PEERE6/WyEg3lsuyw4GHlPZHog==}
@@ -2819,6 +2839,13 @@ packages:
   /chardet/0.7.0:
     resolution: {integrity: sha512-mT8iDcrh03qDGRRmoA2hmBJnxpllMR+0/0qlzjqZES6NdiWDcZkCNAk4rPFZ9Q85r27unkiNNg8ZOiwZXBHwcA==}
     dev: true
+
+  /chart.js/4.2.0:
+    resolution: {integrity: sha512-wbtcV+QKeH0F7gQZaCJEIpsNriFheacouJQTVIjITi3eQA8bTlIBoknz0+dgV79aeKLNMAX+nDslIVE/nJ3rzA==}
+    engines: {pnpm: ^7.0.0}
+    dependencies:
+      '@kurkle/color': 0.3.2
+    dev: false
 
   /chokidar/3.5.3:
     resolution: {integrity: sha512-Dr3sfKRP6oTcjf2JmUmFJfeVMvXBdegxB0iVQ5eb2V10uFJUCAS8OByZdVAyVb8xXNz3GjjTgj9kLWsZTqE6kw==}
@@ -3133,6 +3160,10 @@ packages:
     resolution: {integrity: sha512-39BOQLs9ZjKh0/patS9nrT8wc3ioX3/eA/zgbKNopnF2wCqJEoxywwwElATYvRsXdnOxA/OQeQoFZ3rFjVajhg==}
     engines: {node: '>=4.0'}
     dev: true
+
+  /dayjs/1.11.7:
+    resolution: {integrity: sha512-+Yw9U6YO5TQohxLcIkrXBeY73WP3ejHWVvx8XCk3gxvQDCTEmS48ZrSZCKciI7Bhl/uCMyxYtE9UqRILmFphkQ==}
+    dev: false
 
   /debug/2.6.9:
     resolution: {integrity: sha512-bC7ElrdJaJnPbAP+1EotYvqZsb3ecl5wi6Bfi6BJTUcNowp6cvspg0jXznRTKDjm/E7AdgFBVeAPVMNcKGsHMA==}
@@ -4337,6 +4368,10 @@ packages:
       supports-color: 8.1.1
     dev: true
 
+  /js-sha256/0.9.0:
+    resolution: {integrity: sha512-sga3MHh9sgQN2+pJ9VYZ+1LPwXOxuBJBA5nrR5/ofPfuiJBE2hnjsaN8se8JznOmGLN2p49Pe5U/ttafcs/apA==}
+    dev: false
+
   /js-tokens/4.0.0:
     resolution: {integrity: sha512-RdJUflcE3cUzKiMqQgsCu06FPu9UdIJO0beYbPhHN4k6apgJtifcoCtT9bcxOpYBtpD2kCM6Sbzg4CausW/PKQ==}
     dev: true
@@ -4489,6 +4524,28 @@ packages:
       - supports-color
       - utf-8-validate
     dev: true
+
+  /keycloak-angular/13.0.0_dmva554ejayrayqwbjkfetxrlm:
+    resolution: {integrity: sha512-8IDN97GhH4ZVrpTtuqBHQfn7O4D7ZYQNqR/datpYiXViHGhgY0zbe1mGRi5lhQFH8dmwNurj8EjXKgwrX+eV8g==}
+    peerDependencies:
+      '@angular/common': ^15
+      '@angular/core': ^15
+      '@angular/router': ^15
+      keycloak-js: ^18 || ^19 || ^20
+    dependencies:
+      '@angular/common': 15.1.2_ggb3acsqbhnnbwvu66jur7o3um
+      '@angular/core': 15.1.2_rxjs@7.5.7+zone.js@0.12.0
+      '@angular/router': 15.1.2_xr6kqtli5fp5phrzh2sb5lshpe
+      keycloak-js: 20.0.3
+      tslib: 2.4.1
+    dev: false
+
+  /keycloak-js/20.0.3:
+    resolution: {integrity: sha512-XOOPip8M8K8BsHvk9hnyHuHQ49u9cDu42UXY187G6fM9wsFSvM2apYK3WQ0EUg90nlWt1oMykrWsCWJY10Ihkw==}
+    dependencies:
+      base64-js: 1.5.1
+      js-sha256: 0.9.0
+    dev: false
 
   /kind-of/6.0.3:
     resolution: {integrity: sha512-dcS1ul+9tmeD95T+x28/ehLgd9mENa3LsvDTtzm3vyBEO7RPptvAD+t44WVXaUjTBRcrpFeFlC8WCruUR456hw==}

@@ -34,18 +34,14 @@ export class NavbarComponent {
     this.navbarItems = authService.user.pipe(
       map((user) => {
         if (!user) {
-          return [{
-            text: 'Registrer deg',
-            requiresAdmin: false,
-            url: 'signup'
-          } as NavbarItem,
+          return [
           {
             text: 'Logg inn',
             requiresAdmin: false,
             url: 'login'
           } as NavbarItem]
         }
-        return this.allNavbarItems.filter(item => user.isAdmin ? this.allNavbarItems : this.allNavbarItems.filter(item => item.requiresAdmin === false))
+        return this.allNavbarItems.filter(item => user.isAdmin ? item : item.requiresAdmin === false)
       })
     );
   }

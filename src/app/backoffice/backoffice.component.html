@@ -1,15 +1,119 @@
-<div class="p-1 m-5">
-  <app-create-game></app-create-game>
-</div>
-<div class="p-1 m-5">
-  <h1 class="text-lg">Upcoming games</h1>
-  <ng-container *ngIf="this.gameService.upcomingGames | async as upcomingGames">
-    <app-game-list [games]="upcomingGames"></app-game-list>
-  </ng-container>
-</div>
-<div class="p-1 m-5">
-  <h1 class="text-lg">Previous games</h1>
-  <ng-container *ngIf="this.gameService.previousGames | async as previousGames">
-    <app-game-list [games]="previousGames"></app-game-list>
-  </ng-container>
+<div class="flex flex-row-reverse flex-wrap-reverse justify-around">
+  <section>
+    <article class="p-1 m-5">
+      <app-create-game></app-create-game>
+    </article>
+
+    <article class="p-1 m-5">
+      <h1 class="text-lg">Upcoming games</h1>
+      <ng-container
+        *ngIf="this.gameService.upcomingGames | async as upcomingGames"
+      >
+        <app-game-list [games]="upcomingGames"></app-game-list>
+      </ng-container>
+    </article>
+
+    <article class="p-1 m-5">
+      <h1 class="text-lg">Previous games</h1>
+      <ng-container
+        *ngIf="this.gameService.previousGames | async as previousGames"
+      >
+        <app-game-list [games]="previousGames"></app-game-list>
+      </ng-container>
+    </article>
+  </section>
+
+  <section class="">
+    <article class="p-1 m-5">
+      <h1 class="text-lg">Balance overview</h1>
+      <div
+        *ngIf="this.userService.balanceOverview | async as balanceOverview"
+        class="ml-1"
+      >
+        <p>
+          Total Balance:
+          <span
+            [ngClass]="{
+              'text-red-500':
+                balanceOverview.positiveBalance +
+                  balanceOverview.negativeBalance <
+                0,
+              'text-green-500':
+                balanceOverview.positiveBalance +
+                  balanceOverview.negativeBalance >=
+                0
+            }"
+          >
+            {{
+              balanceOverview.positiveBalance + balanceOverview.negativeBalance
+                | currency : "NOK" : "symbol-narrow" : "0.0-0"
+            }}
+          </span>
+        </p>
+        <span class="text-gray-400"
+          >Kundesaldoer minus utestående kundefordringer</span
+        >
+        <p>
+          Positive Balance:
+
+          <span
+            [ngClass]="{
+              'text-red-500': balanceOverview.positiveBalance < 0,
+              'text-green-500': balanceOverview.positiveBalance >= 0
+            }"
+          >
+            {{
+              balanceOverview.positiveBalance
+                | currency : "NOK" : "symbol-narrow" : "0.0-0"
+            }}
+          </span>
+        </p>
+        <span class="text-gray-400">Sum av positive Kundesaldoer</span>
+        <p>
+          Negative Balance
+          <span
+            [ngClass]="{
+              'text-red-500': balanceOverview.negativeBalance < 0,
+              'text-green-500': balanceOverview.negativeBalance >= 0
+            }"
+          >
+            {{
+              balanceOverview.negativeBalance
+                | currency : "NOK" : "symbol-narrow" : "0.0-0"
+            }}
+          </span>
+        </p>
+        <span class="text-gray-400">Sum av utestående kunderfordringer</span>
+        <p>
+          Positive balance for next game:
+          <span
+            [ngClass]="{
+              'text-red-500': balanceOverview.balanceForNextGame < 0,
+              'text-green-500': balanceOverview.balanceForNextGame >= 0
+            }"
+          >
+            {{
+              balanceOverview.balanceForNextGame
+                | currency : "NOK" : "symbol-narrow" : "0.0-0"
+            }}
+          </span>
+        </p>
+        <span class="text-gray-400"
+          >Gitt at brukerne med positiv saldo skyter inn deres nåværende saldo
+          opp til 50kr</span
+        >
+      </div>
+
+      <app-balance-line-chart></app-balance-line-chart>
+    </article>
+  </section>
+
+  <section>
+    <article
+      class="p-2 m-5 rounded-md bg-zinc-800"
+      *ngIf="this.userService.users | async as users"
+    >
+      <app-user-balance-table [users]="users"></app-user-balance-table>
+    </article>
+  </section>
 </div>

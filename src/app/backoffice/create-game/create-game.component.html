@@ -1,5 +1,6 @@
-<h1>Create new game</h1>
-<form [formGroup]="createGameForm">
+<h1 class="text-lg">Create new game</h1>
+
+<form [formGroup]="createGameForm" class="flex flex-row content-end">
   <!-- <input type="date" formControlName="date"> -->
   <p-calendar
     formControlName="date"
@@ -7,11 +8,13 @@
     [showTime]="true"
     hourFormat="24"
   ></p-calendar>
+  <button
+    pButton
+    type="button"
+    [disabled]="createGameForm.invalid"
+    label="Submit"
+    icon="pi pi-check"
+    iconPos="right"
+    (click)="createGameClicked()"
+  ></button>
 </form>
-<p-button
-  [disabled]="createGameForm.invalid"
-  label="Submit"
-  icon="pi pi-check"
-  iconPos="right"
-  (onClick)="createGameClicked()"
-></p-button>
