@@ -4,23 +4,27 @@
 
 ## Responsive design (tailwind ui component implemented in angular and tailwind)
 
-![backoffice](./example/iPhone12/chrome_0BJA33Tb2Y.png)
-![backoffice](./example/iPhone12/chrome_bT2NrwCt1k.png)
-![backoffice](./example/iPhone12/chrome_0BJA33Tb2Y.png)
-![backoffice](./example/iPhone12/chrome_eIUKw2ZBFQ.png)
-![backoffice](./example/iPhone12/chrome_eIUKw2ZBFQ.png)
+![Responsive design](./example/iPhone12/chrome_0BJA33Tb2Y.png)
+![Responsive design](./example/iPhone12/chrome_bT2NrwCt1k.png)
+![Responsive design](./example/iPhone12/chrome_0BJA33Tb2Y.png)
+![Responsive design](./example/iPhone12/chrome_eIUKw2ZBFQ.png)
+![Responsive design](./example/iPhone12/chrome_eIUKw2ZBFQ.png)
 
 ## Backoffice
 
 Administrering av spill og saldoer
 
-![backoffice](./example/backoffice.png)
+![Backoffice](./example/backoffice.png)
 
 ## Frontoffice
 
 Brukere kjøper lodd og ser egen saldo.
 
-![backoffice](./example/frontoffice.png)
+![Frontoffice](./example/frontoffice.png)
+
+## Keycloak auth
+
+![keycloak auth with gitlab login integration](./example/keycloak.png)
 
 ## Development server
 
