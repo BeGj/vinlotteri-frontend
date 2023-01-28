@@ -2,6 +2,14 @@
 
 <https://begj.github.io/vinlotteri-frontend/>
 
+## Responsive design (tailwind ui component implemented in angular and tailwind)
+
+![backoffice](./example/iPhone12/chrome_0BJA33Tb2Y.png)
+![backoffice](./example/iPhone12/chrome_bT2NrwCt1k.png)
+![backoffice](./example/iPhone12/chrome_0BJA33Tb2Y.png)
+![backoffice](./example/iPhone12/chrome_eIUKw2ZBFQ.png)
+![backoffice](./example/iPhone12/chrome_eIUKw2ZBFQ.png)
+
 ## Backoffice
 
 Administrering av spill og saldoer
